@@ -73,5 +73,4 @@ dependencies {
 
     //kotlinx-serialization
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
-    implementation 'com.google.code.gson:gson:2.10.1'
 }
