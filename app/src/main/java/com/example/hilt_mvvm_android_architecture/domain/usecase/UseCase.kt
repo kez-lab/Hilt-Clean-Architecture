@@ -1,3 +1,0 @@
-package com.example.hilt_mvvm_android_architecture.domain.usecase
-
-internal interface UseCase

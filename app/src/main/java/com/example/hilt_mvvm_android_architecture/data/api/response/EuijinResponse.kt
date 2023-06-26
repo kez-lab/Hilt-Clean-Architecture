@@ -1,8 +1,7 @@
 package com.example.hilt_mvvm_android_architecture.data.api.response
 
 
-import com.example.hilt_mvvm_android_architecture.domain.entity.EuijinEntity
-import com.example.hilt_mvvm_android_architecture.presentation.model.EuijinModel
+import com.example.hilt_mvvm_android_architecture.domain.entity.Euijin
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
@@ -34,7 +33,7 @@ data class EuijinResponse(
     )
 }
 
-fun EuijinResponse.toEuijinEntity() = EuijinEntity(
+fun EuijinResponse.toEuijinEntity() = Euijin(
     array = array?.filterNotNull() ?: listOf(),
     boolean = boolean ?: false,
     color = color ?: "",

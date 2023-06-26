@@ -1,6 +1,6 @@
 package com.example.hilt_mvvm_android_architecture.presentation.model
 
-import com.example.hilt_mvvm_android_architecture.domain.entity.EuijinEntity
+import com.example.hilt_mvvm_android_architecture.domain.entity.Euijin
 
 data class EuijinModel(
     val array: List<Int>,
@@ -13,7 +13,7 @@ data class EuijinModel(
     val string: String
 )
 
-fun EuijinEntity.toEuijinModel() = EuijinModel(
+fun Euijin.toEuijinModel() = EuijinModel(
     array = array,
     boolean = boolean,
     color = color,

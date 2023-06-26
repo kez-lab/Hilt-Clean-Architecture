@@ -1,6 +1,6 @@
 package com.example.hilt_mvvm_android_architecture.domain.entity
 
-data class EuijinEntity(
+data class Euijin(
     val array: List<Int>,
     val boolean: Boolean,
     val color: String,

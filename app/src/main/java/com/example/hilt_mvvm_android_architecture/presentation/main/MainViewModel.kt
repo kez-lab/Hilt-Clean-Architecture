@@ -13,10 +13,9 @@ import kotlinx.coroutines.launch
 import retrofit2.HttpException
 import javax.inject.Inject
 
-@HiltViewModel
-class MainViewModel @Inject constructor(
+@HiltViewModel class MainViewModel @Inject constructor(
     private val euijinGetDataUseCase: EuijinGetDataUseCase
-    ) : ViewModel() {
+) : ViewModel() {
 
     private val _euijinLiveData = MutableLiveData<EuijinModel>()
     val euijinLiveData: LiveData<EuijinModel> get() = _euijinLiveData
@@ -24,18 +23,15 @@ class MainViewModel @Inject constructor(
 
     fun getData() {
         viewModelScope.launch {
-            euijinGetDataUseCase().fold(
-                onSuccess = {
-                   _euijinLiveData.value = it.toEuijinModel()
-                },
-                onFailure = {
-                    if (it is HttpException) {
-                        Log.e("MainViewModel", "getData() error: ${it.code()}")
-                    } else {
-                        Log.e("MainViewModel", "getData() error: $it")
-                    }
+            euijinGetDataUseCase().fold(onSuccess = {
+                _euijinLiveData.value = it.toEuijinModel()
+            }, onFailure = {
+                if (it is HttpException) {
+                    Log.e("MainViewModel", "getData() error: ${it.code()}")
+                } else {
+                    Log.e("MainViewModel", "getData() error: $it")
                 }
-            )
+            })
         }
     }
 }

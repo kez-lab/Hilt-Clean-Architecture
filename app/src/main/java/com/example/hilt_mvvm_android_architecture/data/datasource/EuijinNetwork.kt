@@ -4,8 +4,8 @@ import com.example.hilt_mvvm_android_architecture.data.api.response.EuijinRespon
 import com.example.hilt_mvvm_android_architecture.data.api.service.EuijinService
 import javax.inject.Inject
 
-class EuijinDataSourceImpl @Inject constructor(private val euijinService: EuijinService) : EuijinDataSource {
-    override suspend fun getData(): Result<EuijinResponse> {
-        return runCatching { euijinService.getData() }
+class EuijinNetwork @Inject constructor(private val euijinService: EuijinService) : EuijinRemoteDataSource {
+    override suspend fun getData(): EuijinResponse {
+        return euijinService.getData()
     }
 }

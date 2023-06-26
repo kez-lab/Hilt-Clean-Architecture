@@ -1,7 +1,7 @@
 package com.example.hilt_mvvm_android_architecture.di
 
-import com.example.hilt_mvvm_android_architecture.data.datasource.EuijinDataSource
-import com.example.hilt_mvvm_android_architecture.data.datasource.EuijinDataSourceImpl
+import com.example.hilt_mvvm_android_architecture.data.datasource.EuijinRemoteDataSource
+import com.example.hilt_mvvm_android_architecture.data.datasource.EuijinNetwork
 import com.example.hilt_mvvm_android_architecture.domain.repository.EuijinRepository
 import com.example.hilt_mvvm_android_architecture.data.repository.EuijinRepositoryImpl
 import dagger.Binds
@@ -16,7 +16,7 @@ interface BindModule {
 
     @Binds
     @Singleton
-    fun bindEuijinDataSource(euijinDataSourceImpl: EuijinDataSourceImpl): EuijinDataSource
+    fun bindEuijinDataSource(euijinDataSourceImpl: EuijinNetwork): EuijinRemoteDataSource
 
     @Binds
     @Singleton
