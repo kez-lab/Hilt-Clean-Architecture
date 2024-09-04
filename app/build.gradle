@@ -69,7 +69,7 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.44"
 
     //lifeCycle
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.6.1"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.8.5"
 
     //kotlinx-serialization
     implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1"
